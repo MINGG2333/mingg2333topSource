@@ -59,7 +59,8 @@ git clone <repository> [<directory>]
 
 git config --list
 git config --global user.name MINGG2333
-git config --global user.email @foxmail.com
+git config --global user.email 54434036+MINGG2333@users.noreply.github.com
+git config user.email "{ID}+{username}@users.noreply.github.com"
 
 git status -s
 git log
@@ -97,10 +98,13 @@ curl -s https://packagecloud.io/install/repositories/github/git-lfs/script.deb.s
 sudo apt-get install git-lfs
 git-lfs install
 git lfs pull
-
 ```
 
 *origin, origin2 are personal names for repository
+
+to clear commits, [清除github所有历史提交记录的方法 (ops-coffee.cn)](https://ops-coffee.cn/t/remove-github-commit-log.html)
+
+for private email, [git - Error "Your push would publish a private email address" - Stack Overflow](https://stackoverflow.com/questions/43863522/error-your-push-would-publish-a-private-email-address)
 
 # install
 
@@ -129,8 +133,6 @@ For the latest stable Git version in Ubuntu/Debian:
 ```bash
 sudo apt-get install git
 ```
-
-
 
 # basic use
 
@@ -339,6 +341,3 @@ http://git.oschina.net/progit/,
 https://www.liaoxuefeng.com/wiki/896043488029600/896067008724000,
 
 https://gitee.com/help/articles/4104,
-
-
-
