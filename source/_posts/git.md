@@ -104,7 +104,9 @@ git lfs pull
 
 to clear commits, [清除github所有历史提交记录的方法 (ops-coffee.cn)](https://ops-coffee.cn/t/remove-github-commit-log.html)
 
-for private email, [git - Error "Your push would publish a private email address" - Stack Overflow](https://stackoverflow.com/questions/43863522/error-your-push-would-publish-a-private-email-address)
+for private email, [git - Error "Your push would publish a private email address" - Stack Overflow](https://stackoverflow.com/questions/43863522/error-your-push-would-publish-a-private-email-address), then change email in ,
+
+- [Projects - AppVeyor](https://ci.appveyor.com/projects), setting-envs
 
 # install
 
