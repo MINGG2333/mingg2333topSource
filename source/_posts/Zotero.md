@@ -36,19 +36,17 @@ or use `.deb` file
 ln -s ~/zotero/zotero.desktop ~/.local/share/applications/zotero.desktop
 ```
 
-
-
 # Configuration
 
 Refer to [初始设定](https://zhuanlan.zhihu.com/p/31852030)
 
-## Sync
+# Cloud
 
-### Dropbox
-
-prepare a own cloud for sync, like **Dropbox**, for installation on Ubuntu refer to https://vitux.com/how-to-install-and-sync-dropbox-on-ubuntu/, https://www.mywiki.cn/hovercool/index.php/%E5%AE%89%E8%A3%85Dropbox%E5%AE%A2%E6%88%B7%E7%AB%AF, https://ywnz.com/linuxjc/5772.html.
+prepare a own cloud for sync, taking **Dropbox** for example (installation on Ubuntu refer to [How to Install and Sync DropBox on Ubuntu 18.04 LTS - VITUX](https://vitux.com/how-to-install-and-sync-dropbox-on-ubuntu/), [安装Dropbox客户端 - 哈库 - 个人维基 (mywiki.cn)](https://www.mywiki.cn/hovercool/index.php/%E5%AE%89%E8%A3%85Dropbox%E5%AE%A2%E6%88%B7%E7%AB%AF))
 
 Note: if you use proxy, you'd better to configure it manually in **Dropbox Preferences**.
+
+## Configuration
 
 Refer to [ZotFile 配合同步盘](https://zhuanlan.zhihu.com/p/31453719), [Zotero和zotfile插件关联以及使用](https://zhuanlan.zhihu.com/p/104848524).
 
@@ -58,20 +56,24 @@ From [zotfile offical website](https://link.zhihu.com/?target=http%3A//zotfile.c
 
 ![image-20211104225200656](Zotero/image-20211104225200656.png)
 
+Source folder：插件自动检索文件夹里的新增文件。
+
 ![image-20211104225013898](Zotero/image-20211104225013898.png)
 
-原理：
+Linked files/相对路径下的文件：对应云端文件，用于Zotero的读。
 
-实体文件 虚链接 
+Stored files：终端文件。
 
-manage attachments，rename attachments 
+## Operation
 
-工具—管理附件——转换已链接文件为已存储文件
+1. local_clound
 
+manage attachments - rename attachments meanwhile move from local
 
+Tools - manage attachments - to stored files
 
-() tablet
+2. tablet
 
-manage attachments—send to tablet
+manage attachments - send to tablet
 
-manage attachments—get from tablet
+manage attachments - get from tablet with **contents**

@@ -31,7 +31,7 @@ pip show <module>
 - `__init__.py`: claim the package of python and collect class and function
 
 - `__main__.py`: 
-
+  
   ```bash
   # __main__.py in package
   python __main__.py ...
@@ -61,7 +61,6 @@ round(a)
 import math
 math.floor(a)
 math.ceil(a)
-
 ```
 
 # advanced operation
@@ -204,8 +203,6 @@ vowels = ['e', 'a', 'u', 'o', 'i']
 vowels.sort(reverse=True) # no return, just sort 'vowels'
 ```
 
-
-
 # dict
 
 refer to https://www.runoob.com/python/python-dictionary.html
@@ -219,12 +216,9 @@ from collections import Counter
 
     data_col_dict = Counter(data_col)
     data_col_tuple_sort_list = data_col_dict.most_common()
-    
+
     for item in data_col_dict.items():
-
 ```
-
-
 
 ## OrderedDict
 
@@ -239,6 +233,8 @@ to defien a customed tuple-like type
 # numpy
 
 refer to https://juejin.cn/post/6844903827473219597, https://blog.csdn.net/weixin_38283159/article/details/78793277, https://www.cnblogs.com/mzct123/p/8659193.html, 
+
+[Python必备基础：这些NumPy的神操作你都掌握了吗？ - 腾讯云开发者社区-腾讯云 (tencent.com)](https://cloud.tencent.com/developer/article/1418358)
 
 ```python
 import numpy as np
@@ -336,7 +332,6 @@ Note: the dtype of np.str_ includes the limitation of length of the str.
 
 ```python
 import string
-
 ```
 
 # matplotlib
@@ -414,7 +409,7 @@ related to: https://www.bbsmax.com/A/gGdXbVvmJ4/
 
 *trouble: why it becomes slower and slower when it handles many photos?  The following pipeline has the same trouble (the two pipeline both use `canvas`):
 
-```python	
+```python
 # animation
 import matplotlib.pyplot as plt
 import numpy as np
@@ -442,8 +437,6 @@ for phase in np.linspace(0, 10*np.pi, 500):
 sys.path.append(path)
 ```
 
-
-
 # os
 
 handle directory
@@ -466,8 +459,6 @@ from environs import Env
 env = Env()
 SIM = env.str('SIM', 'fsdfds')
 ```
-
-
 
 ## path
 
@@ -493,8 +484,6 @@ os.path.isdir(path)
 
 os.path.getsize(path)
 ```
-
-
 
 ## walk
 
@@ -534,6 +523,16 @@ for root, dirs, files in os.walk(path):
 print(roots_dict)
 ```
 
+# time
+
+## datetime
+
+refer to [How to get current date and time in Python?](https://www.programiz.com/python-programming/datetime/current-datetime)[How to get current date and time in Python?](https://www.programiz.com/python-programming/datetime/current-datetime)
+
+```python
+
+```
+
 # pathlib
 
 ## Path
@@ -545,8 +544,6 @@ from pathlib import Path
 
 # refer to: https://docs.python.org/zh-cn/3/library/pathlib.html
 ```
-
-
 
 # functools
 
@@ -561,8 +558,6 @@ worker = partial(Func, b=1)
 worker(a='test')
 # test 1
 ```
-
-
 
 # multiprocessing
 
@@ -610,7 +605,7 @@ def main():
 
     p = MyNewProcess(mdic, )
     p.start() # to call p.run()
-    
+
     p1 = Process(target=subprocess2, args=(mdic, )) 
     p1.start()
 
@@ -666,8 +661,6 @@ signal.alarm(0)          # Disable the alarm
 # sample from: https://docs.python.org/3/library/signal.html#example
 ```
 
-
-
 # txt
 
 ```python
@@ -678,9 +671,9 @@ if (sys.version_info >= (3, 5)):
     fd = open(filename, 'r')
     f = fd
 elif (sys.version_info >= 2.7):
-	fd = codecs.open(filename, 'r')
-	f = fd
-    
+    fd = codecs.open(filename, 'r')
+    f = fd
+
 line = f.readline()
 splitline = line.strip().split(' ')
 # or
@@ -694,10 +687,7 @@ splitlines = [x.strip().split(' ') for x in lines]
 import Image
 import numpy as np
 Image.open(object.logo.path).convert('RGB').save('/tmp/output.png')
-
 ```
-
-
 
 # xls
 
@@ -729,9 +719,8 @@ char_hash = sheet1.col_values(4)
 refer to https://blog.csdn.net/sinat_26917383/article/details/78204653
 
 ```python
+
 ```
-
-
 
 # pywinauto
 
@@ -757,3 +746,34 @@ def foo():
     foo.counter += 1
 ```
 
+# ML
+
+## scikit-learn
+
+```bash
+pip install scikit-learn
+```
+
+### TSNE
+
+refer to [TSNE实现降维及可视化_CtrlZ1的博客-CSDN博客_tsne降维](https://blog.csdn.net/qq_41076797/article/details/115508184)[TSNE实现降维及可视化_CtrlZ1的博客-CSDN博客_tsne降维](https://blog.csdn.net/qq_41076797/article/details/115508184)
+
+# CV
+
+## OpenCV
+
+```bash
+pip install opencv-python
+```
+
+```python
+imgpath=r"d:/20200708002140.jpg"
+img=cv2.imread(imgpath)
+
+cv2.namedWindow('image', ) # cv2.WINDOW_NORMAL
+cv2.moveWindow("image", 1000, 100) # x, y for all screens
+
+cv2.imshow("image", img)
+cv2.waitKey()
+# refer to 
+```

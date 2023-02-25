@@ -30,8 +30,6 @@ cat /proc/cpuinfo| grep "processor"| wc -l
 cat /proc/cpuinfo | grep name | cut -f2 -d: | uniq -c
 ```
 
-
-
 # User
 
 ```bash
@@ -67,8 +65,6 @@ sudo su root
 related: [Linux下修改用戶模式（usermod，sudo權限等）](https://kknews.cc/tech/mqmk4g.html).
 
 ## root
-
-
 
 # Source
 
@@ -109,8 +105,6 @@ you can install some basic tools or libraries offline by using Ubuntu installati
 sudo dpkg -i ***.deb
 ```
 
-
-
 Notice: not suggested because of the old versions and special installation order.
 
 ## online
@@ -124,8 +118,6 @@ sudo apt --fix-broken install
 
 pip3 install --upgrade pip
 ```
-
-
 
 # hosts and proxy
 
@@ -149,7 +141,7 @@ sudo gedit /etc/hosts
 use [clash for Linux: A rule-based tunnel in Go](https://github.com/Dreamacro/clash).
 
 1. Using the following instruments, download and extract software clash from [Releases · clash](https://github.com/Dreamacro/clash/releases), and move the executable file to be customized `/usr/local/bin/clash`, then execute it to automatically get `~/.config/clash` and two configuration file in it.
-
+   
    ```bash
    export VERSION_CLASH=v1.6.5
    export CLash_VERSION=clash-linux-amd64-${VERSION_CLASH}
@@ -164,13 +156,13 @@ use [clash for Linux: A rule-based tunnel in Go](https://github.com/Dreamacro/cl
    cd ~/.config/clash
    ls
    ```
-
+   
    Press `Ctrl + C` to stop clash.
-
+   
    Notice: you can build locally referring to [Home · Dreamacro/clash Wiki · GitHub](https://github.com/Dreamacro/clash/wiki).
 
 2. Update your own `config.yaml` to `~/.config/clash/config.yaml`,
-
+   
    ```bash
    export CLASH_URL={your own subscription address}
    sudo wget --no-check-certificate -O ~/.config/clash/config.yaml ${CLASH_URL}
@@ -178,7 +170,6 @@ use [clash for Linux: A rule-based tunnel in Go](https://github.com/Dreamacro/cl
    # curl -L -o ~/.config/clash/config.yaml ${CLASH_URL}
    # or, refer to https://blog.csdn.net/Undefinedefity/article/details/117171436
    # curl -H "User-Agent: ClashX/1.20.4.1" https://*****.yaml > config.yaml 
-   
    ```
    
    Optional: you can update the `~/.config/clash/Country.mmdb` too, use the following command lines or download from [GeoLite2-Country.mmdb · Gitee 极速下载/Pingtunnel - Gitee.com](https://gitee.com/mirrors/Pingtunnel/blob/master/GeoLite2-Country.mmdb).
@@ -189,45 +180,41 @@ use [clash for Linux: A rule-based tunnel in Go](https://github.com/Dreamacro/cl
    export Countrymmdb_URL=https://whiter.cc/cached-apps/linux/Country.mmdb
    wget --no-check-certificate -O ~/.config/clash/Country.mmdb ${Countrymmdb_URL}
    ```
-   
-3. Configure Ubuntu system proxy responding to `~/.config/clash/config.yaml`, 
 
+3. Configure Ubuntu system proxy responding to `~/.config/clash/config.yaml`, 
+   
    ```bash
    gedit ~/.config/clash/config.yaml
    ```
-
+   
    suggest to use GUI in `Settings -> Network -> Network Proxy -> Manual`, or use shell command lines referring to [Linux下安装&配置Clash以实现代理上网 - 知乎 (zhihu.com)](https://zhuanlan.zhihu.com/p/369344633). 
 
 4. Configure clash in [external controller](http://clash.razord.top/#/proxies)  with a browser, refer to [Clash For Linux 安装及使用](https://www.cnblogs.com/sundp/p/13541541.html).
 
 5. Set automatical action, like Boot and Update. you can refer to [在 Ubuntu 上使用 clash 代理工具_dongheli的专栏-CSDN博客](https://blog.csdn.net/dongheli/article/details/114788088#commentBox), [Ubuntu 18.04 使用clash_Undefinedefity的博客-CSDN博客](https://blog.csdn.net/Undefinedefity/article/details/117171436), and [Linux下安装&配置Clash以实现代理上网 - 知乎 (zhihu.com)](https://zhuanlan.zhihu.com/p/369344633). Some frequent usage:
-
+   
    ```bash
    systemctl status clash
    systemctl start clash
    systemctl kill clash
    ```
-
+   
    Notice: if you plan to write a systemd unit `.service` yourself, you need to put it at `/lib/systemd/system` on Ubuntu and use an absolute path to an executable or a simple file name without any slashes while writing `ExecStart=`, for example you cannot use `~`, refer to [systemd.service (www.freedesktop.org)](https://www.freedesktop.org/software/systemd/man/systemd.service.html#ExecStart=). Besides, you must use `systemctl daemon-reload` in shell to make changes and modification of `.service` valid, refer to [How to Manage 'Systemd' Services and Units Using 'Systemctl' in Linux (tecmint.com)](https://www.tecmint.com/manage-services-using-systemd-and-systemctl-in-linux/) and [技术|systemctl 命令完全指南 (linux.cn)](https://linux.cn/article-5926-1.html).
-
+   
    Otherwise, you can use a native software `Startup Application`, refer to [Ubuntu 18.04 使用clash_Undefinedefity的博客-CSDN博客](https://blog.csdn.net/Undefinedefity/article/details/117171436).
-
+   
    ```bash
    echo ${CLASH}
    ```
 
 6. set for terminal 
-
+   
    ```bash
    export http_proxy=http://127.0.0.1:7890
    export https_proxy=http://127.0.0.1:7890
    ```
 
-   
-
 Notice: if your system time is not correct, there would be something wrong with clash.
-
-
 
 # shell
 
@@ -242,7 +229,6 @@ sudo apt update
 sudo apt-get install git
 # refer to https://gauliang.github.io/blog/2020/how-to-install-java-with-apt-get-on-ubuntu/
 sudo apt install default-jre
-
 ```
 
 refer to [2020最详细安装Ubuntu指南 - 知乎 (zhihu.com)](https://zhuanlan.zhihu.com/p/135953477), [ubuntu新安装完成后配置_sinat_40025092的博客-CSDN博客](https://blog.csdn.net/sinat_40025092/article/details/79785185),
@@ -260,8 +246,6 @@ chmod +x A*
 ln -s {src} {des}
 ```
 
-
-
 ## tar gz tgz
 
 refer to [Ubuntu 常用解压与压缩命令_songbinxu的博客-CSDN博客_ubuntu zip](https://blog.csdn.net/songbinxu/article/details/80435665),
@@ -277,8 +261,6 @@ tar -xvf FileName.tar
 # .gz
 gunzip FileName.gz
 ```
-
-
 
 ## makefile
 
@@ -304,10 +286,31 @@ ls -l filename
 du -sh filename
 # 查看磁盘的使用情况命令：
 df -h
-df -hl
 ```
 
+## swap
 
+refer to https://zhuanlan.zhihu.com/p/399986218, [Linux环境下swap配置方法 - 腾讯云开发者社区-腾讯云](https://cloud.tencent.com/developer/article/1525090)
+
+```bash
+# check swap and disk
+free -h
+df -h
+# create swapfile which occupys disk, e.g. 64GB
+dd if=/dev/zero of=/var/swapfile bs=1M count=65536
+
+mkswap /var/swapfile
+swapon /var/swapfile
+swapon -s
+
+# open /etc/fstab
+vim /etc/fstab
+# add following at last:
+/var/swapfile swap swap defaults 0 0
+
+# check swappiness
+cat /proc/sys/vm/swappiness
+```
 
 ## file
 
@@ -328,8 +331,6 @@ cat
 sudo apt-get install tree
 tree .
 ```
-
-
 
 ## process
 
@@ -358,16 +359,12 @@ ps -aux | grep "runoob.sh"
 kill -9  进程号PID
 ```
 
-
-
 ## cpu
 
 ```bash
 # refer to https://www.cnblogs.com/ggjucheng/archive/2012/01/08/2316399.html
 top
 ```
-
-
 
 ## Environment Variables
 
@@ -379,16 +376,12 @@ refer to [ubuntu－设置系统环境变量 - 简书 (jianshu.com)](https://www.
 ifconfig -a
 ```
 
-
-
 ## PORT
 
 ```python
 lsof -a -i4 -i6 -itcp
 lsof -i TCP:2000
 ```
-
-
 
 ## system
 
@@ -417,11 +410,23 @@ scp file username@ip_address:Documents/
 scp -rf folder username@ip_address:
 ```
 
-
-
 ## root
 
 refer to [ubuntu18.04获取root权限并用root用户登录 - 不妨不妨，来日方长 - 博客园 (cnblogs.com)](https://www.cnblogs.com/masbay/p/10744900.html),
+
+# Sharing
+
+setting -> privacy -> screen lock
+
+refer to [Ubuntu20.04 桌面共享 - Beavan - 博客园 (cnblogs.com)](https://www.cnblogs.com/Beavan/p/13743650.html), [Win10远程桌面Ubuntu20.04 - 掘金 (juejin.cn)](https://juejin.cn/post/7082185971311050789).
+
+```bash
+# 1 screen sharing in setting, if no setting install vino
+sudo apt install vino
+# 2 dconf-editor->org->gnome->desktop->remote access->require encrytion: turn off
+sudo apt install xrdp dconf-editor
+# 3 login using IP, tool.lu/ip/
+```
 
 # Application
 
@@ -439,9 +444,9 @@ sudo apt-get install -f
 ## language
 
 1. click https://pinyin.sogou.com/linux/?r=pinyin to download and install sogou.
-
+   
    ![sogou for linux](ubuntu/sogou%20for%20linux.png)
-
+   
    Note that you must use `fcitx` if you use sogou, refer to https://pinyin.sogou.com/linux/help.php.
 
 ## editor
@@ -491,32 +496,32 @@ Note that you need to install Dropbox Headless manually if there are something w
 ## other tool
 
 1. install Git,
-
+   
    ```bash
    sudo apt-get install git
    ```
-
-   For create ssh key, refer to https://docs.github.com/cn/github/authenticating-to-github/connecting-to-github-with-ssh, then you can configure for it in [Keys for Github](https://github.com/settings/keys) or [Keys for Gitee](https://gitee.com/profile/sshkeys). And you can configure for your Git refering to http://mingg2333.top/2021/07/29/git/.
    
-2. for making video,
+   For create ssh key, refer to https://docs.github.com/cn/github/authenticating-to-github/connecting-to-github-with-ssh, then you can configure for it in [Keys for Github](https://github.com/settings/keys) or [Keys for Gitee](https://gitee.com/profile/sshkeys). And you can configure for your Git refering to http://mingg2333.top/2021/07/29/git/.
 
+2. for making video,
+   
    ```bash
    sudo apt install ffmpeg
    ```
-
+   
    refer to https://www.liangye.site/2019/01/22/python-animation/.
 
 3. screen recorder. 
-
+   
    ```bash
    sudo apt install kazam
    ```
-
+   
    refer to https://itsfoss.com/best-linux-screen-recorders/
 
 4. 
 
-3. 
+5. 
 
 ![screenshot](ubuntu/screenshot.png)
 

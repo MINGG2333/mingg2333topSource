@@ -9,7 +9,6 @@ tags:
 refer to [Conda常用命令整理---创建环境----conda create --name your_env_name python=3.7_如何利用html码转载别人的博客-CSDN博客_conda create](https://blog.csdn.net/zjc910997316/article/details/93662410)
 
 ```bash
-
 conda info --envs
 conda activate {your_env_name}
 conda deactivate
@@ -31,6 +30,8 @@ conda install --rev 0
  # delete all packager & cache
 conda clean -y --all
 
+# 不太适合移动
+conda config --add envs_dirs C:\Anaconda3\envs
 ```
 
 for Miniconda3, refer to [Tensorflow with DirectML on WSL 2 - Win32 apps | Microsoft Docs](https://docs.microsoft.com/en-us/windows/win32/direct3d12/gpu-tensorflow-wsl#set-up-python-environment), [Installation — conda 4.10.2.post1+248741a84 documentation](https://conda.io/projects/conda/en/latest/user-guide/install/index.html).
@@ -41,8 +42,6 @@ wget https://repo.anaconda.com/miniconda/Miniconda3-latest-Linux-x86_64.sh
 bash Miniconda3-latest-Linux-x86_64.sh
 conda init
 ```
-
-
 
 ![AD49D34880B09A1AB1866543BA26746E](conda/AD49D34880B09A1AB1866543BA26746E.jpg)
 
@@ -57,6 +56,4 @@ anaconda3/bin/conda init bash
 source ~/.bashrc
 source activate base
 conda activate base
-
 ```
-

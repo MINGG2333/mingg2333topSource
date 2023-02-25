@@ -46,47 +46,43 @@ proper response -> best effort (Proper Response with Extra Evasive Effort) -> ex
 assume: under reasonable Situation
 
 1. a single lane road: cars cannot perform lateral maneuvers, cars never drive backward
-
+   
    common sense rule: if someone hits you from behind it is not your fault
-
+   
    metrics:  Safe longitudinal distance — same direction
-
+   
    proper response: rear car's acceleration, brake according to safe distance
 
 2. a straight road (a general lane geometry): cars cannot perform lateral maneuvers, cars can drive backward
-
+   
    common sense: if someone hits you from behind while you are reversing it is your fault
-
+   
    metrics:  Safe longitudinal distance — opposite directions
-
+   
    proper response: both cars' acceleration, brake according to safe distance
 
 3. a straight road (two routes of the same geometry)
-
+   
    metrics:  Safe Lateral Distance
-
+   
    proper response: both cars' acceleration, brake according to safe distance
 
 4. common sense: if you can avoid an accident without causing another accident, you must do it
 
 5. multiple different road geometries: roundabouts, junctions, and merge into highways; one route has priority over others, and vehicles riding on it have the *right of way*; two cars *on different routes*
-
+   
    metrics:  Safe Lateral/Longitudinal Distance for Two Routes of Different Geometry (abstract? position relationship?)
 
 6. special scenario at an intersections with traffic lights, like right of way is given, not taken
 
 7. no route geometry, e.g. the parking lot
-
-   (not consideration)
-
    
+   (not consideration)
 
 8. Pedestrians: zebra crossing or residential street / residential road (unstructured roads?)
 
-   
-
 9. Occlusion
-
+   
    common sense:  When a human driver claims “but I couldn’t see him”, a counter argument is often “well, you should’ve been more careful”, like limit *v* or **proper Behaviour**(always adhering to proper response)
 
 # stress-testing techniques
@@ -125,8 +121,6 @@ transition: a set of junction lanes connecting the same roads
 
 labels assigned to transitions: traffic signs at junctions
 
-
-
 *route type* at a junction: junction topology features, route features at a junction
 
 junction topology feature: describe how a **road** connects with other **roads** at a junction
@@ -136,8 +130,6 @@ junction topology feature: describe how a **road** connects with other **roads**
 route: consist of **lanes**
 
 route feature: describe land changing and motions for traffic signs, to describe route feature (feature keep when only lane-changing times changes?no.)
-
-
 
 param format: (initial lanes, target lanes, obstacles positions)
 
@@ -165,8 +157,6 @@ Components: It -> Ot, graphical assets, physical properties
 
 A Paracosm configuration: components
 
-
-
 test parameter coverage: k-wise combinatorial coverage & low dispersion
 
 various test input generation strategies: random sampling over discrete parameters & deterministic quasi-Monte Carlo methods for continuous parameters
@@ -174,8 +164,6 @@ various test input generation strategies: random sampling over discrete paramete
 ## Generating and Characterizing Scenarios for Safety Testing of Autonomous Vehicles
 
 interesting scenario:  where a collision or near collision happens, and the AV can avoid it in at least one way (including critical scenarios, can be ranked by complexity; scenario having less **CriticalTime** before collision is unavoidable)
-
-
 
 Characterizing: how many safe paths exist and how hard is it to follow them (complexity of the scenario w.r.t. possibility of avoiding accidents)
 
@@ -186,8 +174,6 @@ using 'the number of computed safe driving paths, total paths in the scenario (a
 computed safe driving paths: calculating the annulus sector in the next time-step,  discretize the 2D sector with a grid, quantizing the AV valid state
 
 tensor representation for AV only (fix the trajectories of all actors other):  enumerate all states of AV at time t
-
-
 
 Generating method: 
 
@@ -233,8 +219,6 @@ diversity: N agents (actor and critic in DDPG) with random initializations
 
 Multimodal in multi-modality (pattern/logic Scenarios?)
 
-
-
  flow-based generative model (to estimate the multimodal distribution of safety-critical scenarios): 
 
  as the objective function
@@ -246,8 +230,6 @@ conditional input according to characteristics of the tasks
  flow-based to estimate the multimodal distribution
 
 testing at different stress levels
-
-
 
 pre-training a generative model (assuming RealNVP, a flow-based model) (by maximizing log-likelihood) (to approximate the distribution of the real data) , a modified flow-based model (with a conditional input) (weighted maximum likelihood estimation WMLE where weight related to the risk metric and data probability) (log-likelihood approximately proportional to risk level), adaptive sampler (step along gradient of worth exploring value related to risk metric minus risk level, calculated by NES under Monte Carlo method)
 
@@ -262,8 +244,6 @@ Surprise Adequacy of sets: the range of surprise
 objective: higher(*Surprise Coverage*)
 
 diversified goal: from those similar to those significantly different and adversarial. with respect to training data 
-
-
 
  adversarial example classifiers?
 
@@ -335,10 +315,6 @@ Safe at any speed: A simulation-based test harness for autonomous vehicles 2017
 
 **Generating and characterizing scenarios for safety testing of autonomous vehicles 2021**
 
-
-
-
-
 (scenario) Depiction of priority lightvehicle pre-crash scenarios for safety applications based on vehicleto-vehicle communications
 
 (scenario) Pegasus—first steps for the safe introduction of automated driving
@@ -367,13 +343,9 @@ VerifAI: A toolkit for the formal design and analysis of artificial intelligence
 
 (test DL) Reluplex: An efficient SMT solver for verifying deep neural networks. In: CAV (2017)  *
 
-
-
 AV accidents reported: California DMV (https://www.dmv.ca.gov/portal/dmv/detail/vr/autonomous/testing), Waymo simulated driving behavior in reconstructed fatal crashes within an autonomous vehicle operating domain, Database approach for the sign-off process of highly automated vehicles, Survey on scenario-based safety assessment of  automated vehicles.
 
 Generating effective test cases for self-driving cars from police reports 2019
-
-
 
 攻击面在于软件输入：系统正常状态下能否正常实现某些功能
 
@@ -389,19 +361,11 @@ failures: possible (frequency, realistic), dangerous,
 
 Adaptive stress testing (AST) : find the most likely **path** from a **start state** to a **failure state** in a discrete-time simulator, a **Markov decision process**. (disa: **failure is unavoidable**; **same types of failures** )
 
-
-
 Fuzzing (AFL,  Fuzz revisited: A re-examination of the reliability of unix utilities and services.), grammar-based fuzzing ( Grammar-based whitebox fuzzing., Evolutionary grammar-based fuzzing.), structure-aware fuzzing ( GRIMOIRE: synthesizing structure while fuzzing., SLF: fuzzing without valid seed inputs.).
-
-
 
 RL: Observing a repeated one, necessary for RL to be effective, requires RL to accumulate a huge set of historical data, which can be very time-consuming. In contrast, GA guides the search by trial and error without relying on having a huge set of historical data.
 
-
-
 metamorphic testing:   if two inputs to a DL system are similar with respect to some human sense, the outputs should also be similar
-
-
 
 看到奇怪的名词先在原文搜索， 如果是普通词组合的描述则一般要看原文整段。
 

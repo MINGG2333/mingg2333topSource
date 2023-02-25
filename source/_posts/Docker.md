@@ -46,8 +46,6 @@ docker top ubuntu-test # PID, ...
 docker inspect ubuntu-test # detaied config and state
 ```
 
-
-
 # what it is
 
 two concepts: container, image

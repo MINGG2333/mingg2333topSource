@@ -52,7 +52,7 @@ defense goal: perform on par with human crowd-workers
 
 [7]SAFER: A structure-free approach for certifified robustness to adversarial word substitutions.( data augmentation approach)
 
-#  image
+# image
 
 Christian Szegedy, Wojciech Zaremba, Ilya Sutskever,
 
@@ -94,7 +94,7 @@ text. *arXiv preprint arXiv:1801.01944*.
 
 obfuscated examples
 
-#  reinforcement learning
+# reinforcement learning
 
 Vahid Behzadan and Arslan Munir. Vulnerability of deep reinforcement learning to policy induction
 
@@ -320,8 +320,6 @@ side-effect feature vectors:  inject each gadget into a *minimal app*
 
 ![image-20211211211337584](Adversarial-examples/image-20211211211337584.png)
 
-
-
 DeepDetectNet vs RLAttackNet: An
 
 adversarial method to improve deep learning
@@ -387,7 +385,7 @@ textattack/attention_models/*
 ```python
 class ModelWrapper(ABC):
     """A model wrapper queries a model with a list of text inputs.
-    
+
     Classification-based models return a list of lists, where each sublist
     represents the model's scores for a given input.
 
@@ -396,11 +394,10 @@ class ModelWrapper(ABC):
     """
     def __call__(self):
         return outputs
-    
+
 class HuggingFaceDataset(Dataset):
     def __getitem__(self, i):
         """Return i-th sample."""
-
 ```
 
 # list
@@ -455,8 +452,6 @@ Comparison based on:
 
 ![image-20211127120127823](Adversarial-examples/image-20211127120127823.png)
 
-
-
 effective:  outperforms the previous
 
 efficient: lower computational complexity 
@@ -488,4 +483,3 @@ thin solid line
 is attributed to: 取决于,归咎于
 
 # end
-

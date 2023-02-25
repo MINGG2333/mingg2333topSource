@@ -119,13 +119,15 @@ Take [bert for classification demo](https://github.com/google-research/bert#sent
 }
 ```
 
-
-
 ## run to cursor
 
 Set the shortcut for it in `File - Preference - Keyboard Shortcuts`.
 
 ![image-20210912172850454](VScode/image-20210912172850454.png)
+
+## Bracket Pair Colorizer
+
+![](VScode_Pic/2022-08-14-17-57-46-image.png)
 
 # other setting
 

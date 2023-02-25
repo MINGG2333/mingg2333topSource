@@ -267,7 +267,7 @@ ssh-agent -k
 *SSH public key example: ~/.ssh/id_ed25519.pub, so you can print it in line:
 
 ```bash
-# windows
+# windows & 
 cat ~/.ssh/id_ed25519.pub
 # Linux
 sudo apt-get update
