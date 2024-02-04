@@ -44,6 +44,10 @@ docker port ubuntu-test
 docker logs -f bf08b7f2cd89 # Running on http://0.0.0.0:5000/ (Press CTRL+C to quit)
 docker top ubuntu-test # PID, ...
 docker inspect ubuntu-test # detaied config and state
+
+sudo gpasswd -a $USER docker
+newgrp docker
+reboot
 ```
 
 # what it is

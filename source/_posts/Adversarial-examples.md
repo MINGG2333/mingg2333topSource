@@ -362,6 +362,14 @@ SAFE: Self-Attentive Function Embeddings for Binary Similarity
 
 # tool kit
 
+visual attack toolkits: Cleverhans (Papernot et al., 2016a), FoolBox (Rauber et al., 2017), Adversarial Robustness Toolbox (**ART**)(Nicolae et al., 2018), DEEPSEC (Ling et al., 2019), AdvBox (Goodman et al., 2020)
+
+textual adversarial attacks: TextAttack (Morris et al., 2020), OpenAttack(Guoyang Zeng, 2021)
+
+## ART
+
+![](Adversarial-examples_Pic/2023-04-02-00-59-41-image.png)
+
 ## TextAttack
 
 ### new attack design
@@ -399,6 +407,8 @@ class HuggingFaceDataset(Dataset):
     def __getitem__(self, i):
         """Return i-th sample."""
 ```
+
+## OpenAttack
 
 # list
 

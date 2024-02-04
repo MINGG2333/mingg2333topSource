@@ -136,3 +136,19 @@ https://github.com/carla-simulator/carla/issues/2820
 ```
 
 ![image-20220228161225241](ADS/image-20220228161225241.png)
+
+TODO:
+
+- [x] Return:
+
+- [x] Inherited from
+
+- [ ] server
+
+- [ ] CarSim physics solver
+
+- [ ] relationship between **set_autopilot** and TM-Server
+
+- [ ] check C++, server send carla.WorldSnapshot while client sent tick()
+
+- [ ] when to send carla.TextureColor or carla.TextureFloatColor to server

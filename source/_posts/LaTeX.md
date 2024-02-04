@@ -70,6 +70,8 @@ Fig. \ref{fig:cla2}
 
 \textbf{math}
 
+$\mathbb{Z} \setminus \{ 0 \}$
+
 \makecell[c]{Semi-Supervised \\ Learning}
 
 % for special characters
