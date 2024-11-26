@@ -1,6 +1,6 @@
 ---
 title: Co-simulation of Baidu Apollo with Carla
-date: 2024-2-3 22:18:17
+date: 2024-11-26 22:06:17
 tags:
  - Apollo
  - simulation
@@ -60,8 +60,6 @@ cyber_launch start /apollo/modules/perception/production/launch/perception_lidar
 ## set route
 ps aux | grep -i apollo
 ```
-
-<!--more-->
 
 # Co-simulation with carla
 
