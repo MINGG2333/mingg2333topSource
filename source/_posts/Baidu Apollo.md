@@ -47,21 +47,24 @@ cd carla_scripts
 ./stop_carla.sh
 ./docker_run_carla.sh
 ## start bridge
+bash docker/scripts/dev_into.sh
 cd /apollo/modules/carla_bridge
 python main.py
 
 # Launch Apollo modules
-bash docker/scripts/dev_into.sh
 ## perception module
 mainboard -d /apollo/modules/localization/dag/dag_streaming_rtk_localization.dag
 cyber_launch start modules/drivers/tools/image_decompress/launch/image_decompress.launch
 cyber_launch start /apollo/modules/perception/production/launch/perception_lidar.launch
-## turn on "Transform", "Routing", "Prediction", "Planning"
+## turn on "Transform" (once), "Routing", "Prediction", "Planning", "control"
 ## set route
-## control module
 ps aux | grep -i apollo
 ```
 
 <!--more-->
 
 # Co-simulation with carla
+
+# debug
+
+debug string For code trace
